@@ -1,9 +1,11 @@
 // index.js
 require("dotenv").config();
+var cors = require("cors");
 const express = require("express");
 const morgan = require("morgan");
 const winston = require("winston");
 require("winston-daily-rotate-file");
+
 const http = require("http");
 const {
   enqueuePrintJob,
@@ -15,6 +17,7 @@ const {
 const { startPrinterPolling } = require("./printerService");
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PRINT_SERVER_PORT || 3001;
 
 // Configure Winston with Daily Rotate
@@ -72,14 +75,14 @@ app.get("/healthz", async (req, res) => {
 });
 
 // Security middleware: Allow only local requests.
-app.use((req, res, next) => {
-  const remoteAddr = req.socket.remoteAddress;
-  if (remoteAddr && (remoteAddr.startsWith("127.") || remoteAddr === "::1")) {
-    next();
-  } else {
-    res.status(403).json({ error: "Forbidden" });
-  }
-});
+// app.use((req, res, next) => {
+//   const remoteAddr = req.socket.remoteAddress;
+//   if (remoteAddr && (remoteAddr.startsWith("127.") || remoteAddr === "::1")) {
+//     next();
+//   } else {
+//     res.status(403).json({ error: "Forbidden" });
+//   }
+// });
 
 // Endpoint to receive print jobs.
 app.post("/print", (req, res) => {
