@@ -1,0 +1,24 @@
+{
+  "name": "my-printer-service",
+  "version": "1.0.0",
+  "description": "Local Print Server for your Cloud POS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "install-service": "node service-install.js",
+    "uninstall-service": "node service-uninstall.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@thiagoelg/node-printer": "^0.6.2",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
+    "node-thermal-printer": "^4.4.5",
+    "node-windows": "^1.0.0-beta.8",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}

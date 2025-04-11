@@ -1,0 +1,64 @@
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-10T11:50:10.907Z"}
+{"level":"info","message":"Shutdown initiated. Waiting for queue processing...","timestamp":"2025-04-10T11:50:12.359Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T11:50:12.365Z"}
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-10T11:52:57.533Z"}
+{"level":"info","message":"Received print job","printData":{"items":[{"name":"Espresso","price":2.5},{"name":"Croissant","price":3.75},{"name":"Bottled Water","price":1.25},{"name":"Espresso","price":2.5},{"name":"Croissant","price":3.75},{"name":"Bottled Water","price":1.25},{"name":"Espresso","price":2.5},{"name":"Croissant","price":3.75},{"name":"Bottled Water","price":1.25},{"name":"Espresso","price":2.5},{"name":"Croissant","price":3.75},{"name":"Bottled Water","price":1.25}]},"timestamp":"2025-04-10T11:53:17.968Z"}
+{"level":"info","message":"Using Windows spooler interface; skipping connectivity check.","timestamp":"2025-04-10T11:53:18.050Z"}
+{"level":"info","message":"127.0.0.1 - - [10/Apr/2025:11:53:18 +0000] \"POST /print HTTP/1.1\" 200 31 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-04-10T11:53:18.057Z"}
+{"level":"info","message":"Receipt printed successfully","timestamp":"2025-04-10T11:53:18.131Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T11:53:18.133Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T11:53:18.134Z"}
+{"level":"info","message":"Printer status changed: null → spooler","timestamp":"2025-04-10T11:53:27.545Z"}
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-10T12:37:07.768Z"}
+{"level":"info","message":"Shutdown initiated. Waiting for queue processing...","timestamp":"2025-04-10T12:37:09.497Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T12:37:09.498Z"}
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-10T13:22:43.450Z"}
+{"level":"info","message":"Received print job","printData":{"cnic":"1234567891012","customerName":"frad customer","customerPhone":"03498317774","discount":0,"downPayment":34,"employeeName":"Mulazim1234","image":"https://res.cloudinary.com/djzigu0nr/image/upload/v1744019501/uploads/profile-webcam.png","khataNumber":"2631J","monthlyInstallment":324,"products":[{"color":"Black","discount":0,"name":"Redmi Note 406","price":6766,"quantity":1}],"subkhataId":"67f7c4406d590f2c6858c126","totalAmount":6766,"type":"installment"},"timestamp":"2025-04-10T13:22:57.991Z"}
+{"level":"info","message":"Using Windows spooler interface; skipping connectivity check.","timestamp":"2025-04-10T13:22:58.126Z"}
+{"level":"info","message":"127.0.0.1 - - [10/Apr/2025:13:22:58 +0000] \"POST /print HTTP/1.1\" 200 31 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-10T13:22:58.142Z"}
+{"level":"info","message":"Receipt printed successfully","timestamp":"2025-04-10T13:22:58.297Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:22:58.302Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:22:58.306Z"}
+{"level":"info","message":"Printer status changed: null → spooler","timestamp":"2025-04-10T13:23:13.460Z"}
+{"level":"info","message":"Shutdown initiated. Waiting for queue processing...","timestamp":"2025-04-10T13:28:02.441Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:28:02.442Z"}
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-10T13:28:04.766Z"}
+{"level":"info","message":"Printer status changed: null → spooler","timestamp":"2025-04-10T13:28:34.775Z"}
+{"level":"info","message":"Shutdown initiated. Waiting for queue processing...","timestamp":"2025-04-10T13:34:50.377Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:34:50.382Z"}
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-10T13:34:52.541Z"}
+{"level":"info","message":"Received print job","printData":{"cnic":"1234567891012","customerName":"frad customer","customerPhone":"03498317774","discount":0,"downPayment":34,"employeeName":"Mulazim1234","image":"https://res.cloudinary.com/djzigu0nr/image/upload/v1744019501/uploads/profile-webcam.png","khataNumber":"2631J","monthlyInstallment":324,"products":[{"color":"Black","discount":0,"name":"Redmi Note 406","price":6766,"quantity":1}],"subkhataId":"67f7c4406d590f2c6858c126","totalAmount":6766,"type":"installment"},"timestamp":"2025-04-10T13:34:56.728Z"}
+{"level":"info","message":"Using Windows spooler interface; skipping connectivity check.","timestamp":"2025-04-10T13:34:56.732Z"}
+{"level":"info","message":"127.0.0.1 - - [10/Apr/2025:13:34:56 +0000] \"POST /print HTTP/1.1\" 200 31 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-10T13:34:56.740Z"}
+{"level":"info","message":"Receipt printed successfully","timestamp":"2025-04-10T13:34:56.793Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:34:56.796Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:34:56.800Z"}
+{"level":"info","message":"Printer status changed: null → spooler","timestamp":"2025-04-10T13:35:22.542Z"}
+{"level":"info","message":"Shutdown initiated. Waiting for queue processing...","timestamp":"2025-04-10T13:44:37.674Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:44:37.677Z"}
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-10T13:44:40.547Z"}
+{"level":"info","message":"Printer status changed: null → spooler","timestamp":"2025-04-10T13:45:10.550Z"}
+{"error":"Unexpected end of JSON input","level":"error","message":"Unhandled error","timestamp":"2025-04-10T13:45:59.882Z"}
+{"level":"info","message":"127.0.0.1 - - [10/Apr/2025:13:45:59 +0000] \"POST /print HTTP/1.1\" 500 33 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-10T13:45:59.885Z"}
+{"level":"info","message":"Shutdown initiated. Waiting for queue processing...","timestamp":"2025-04-10T13:46:08.473Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:46:08.477Z"}
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-10T13:46:10.413Z"}
+{"level":"info","message":"Received print job","printData":{"customerName":"Frad Customer","employeeName":"Rrapal32432","remainingAmount":3450,"totalAmount":20000,"totalPayments":[{"_id":"67f500818523eb5d909bedc5","paidAmount":9900,"saleDate":"2025-04-08T10:54:57.302Z"},{"_id":"67f500818523eb5d909bedc6","paidAmount":9900,"saleDate":"2025-04-08T10:54:57.302Z"},{"_id":"67f61dd5c25e63b7622443da","paidAmount":6,"saleDate":"2025-04-09T00:00:00.000Z"},{"_id":"67f61e04c25e63b7622445e9","paidAmount":6,"saleDate":"2025-04-09T00:00:00.000Z"}],"type":"detailed"},"timestamp":"2025-04-10T13:46:17.526Z"}
+{"level":"info","message":"Using Windows spooler interface; skipping connectivity check.","timestamp":"2025-04-10T13:46:17.533Z"}
+{"level":"info","message":"127.0.0.1 - - [10/Apr/2025:13:46:17 +0000] \"POST /print HTTP/1.1\" 200 31 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-10T13:46:17.540Z"}
+{"level":"info","message":"Receipt printed successfully","timestamp":"2025-04-10T13:46:17.608Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:46:17.610Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:46:17.611Z"}
+{"level":"info","message":"Received print job","printData":{"customerName":"Frad Customer","employeeName":"Rrapal32432","remainingAmount":3450,"totalAmount":20000,"totalPayments":[{"_id":"67f500818523eb5d909bedc5","paidAmount":9900,"saleDate":"2025-04-08T10:54:57.302Z"},{"_id":"67f500818523eb5d909bedc6","paidAmount":9900,"saleDate":"2025-04-08T10:54:57.302Z"},{"_id":"67f61dd5c25e63b7622443da","paidAmount":6,"saleDate":"2025-04-09T00:00:00.000Z"},{"_id":"67f61e04c25e63b7622445e9","paidAmount":6,"saleDate":"2025-04-09T00:00:00.000Z"}],"type":"detailed"},"timestamp":"2025-04-10T13:46:27.445Z"}
+{"level":"info","message":"Using Windows spooler interface; skipping connectivity check.","timestamp":"2025-04-10T13:46:27.447Z"}
+{"level":"info","message":"127.0.0.1 - - [10/Apr/2025:13:46:27 +0000] \"POST /print HTTP/1.1\" 200 31 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-10T13:46:27.451Z"}
+{"level":"info","message":"Receipt printed successfully","timestamp":"2025-04-10T13:46:27.509Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:46:27.513Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:46:27.514Z"}
+{"level":"info","message":"Printer status changed: null → spooler","timestamp":"2025-04-10T13:46:40.419Z"}
+{"level":"info","message":"Received print job","printData":{"customerName":"Frad Customer","employeeName":"Rrapal32432","remainingAmount":3450,"totalAmount":20000,"totalPayments":[{"_id":"67f500818523eb5d909bedc5","paidAmount":9900,"saleDate":"2025-04-08T10:54:57.302Z"},{"_id":"67f500818523eb5d909bedc6","paidAmount":9900,"saleDate":"2025-04-08T10:54:57.302Z"},{"_id":"67f61dd5c25e63b7622443da","paidAmount":6,"saleDate":"2025-04-09T00:00:00.000Z"},{"_id":"67f61e04c25e63b7622445e9","paidAmount":6,"saleDate":"2025-04-09T00:00:00.000Z"}],"type":"detailed"},"timestamp":"2025-04-10T13:46:48.442Z"}
+{"level":"info","message":"Using Windows spooler interface; skipping connectivity check.","timestamp":"2025-04-10T13:46:48.443Z"}
+{"level":"info","message":"127.0.0.1 - - [10/Apr/2025:13:46:48 +0000] \"POST /print HTTP/1.1\" 200 31 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-10T13:46:48.446Z"}
+{"level":"info","message":"Receipt printed successfully","timestamp":"2025-04-10T13:46:48.510Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:46:48.512Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-10T13:46:48.513Z"}
