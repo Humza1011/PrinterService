@@ -504,3 +504,17 @@
 {"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-11T08:25:23.075Z"}
 {"level":"info","message":"Shutdown initiated. Waiting for queue processing...","timestamp":"2025-04-11T08:27:29.227Z"}
 {"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-11T08:27:29.229Z"}
+{"level":"info","message":"Local Print Server running on http://127.0.0.1:3001","timestamp":"2025-04-11T08:27:34.144Z"}
+{"level":"info","message":"Printer status changed: null → spooler","timestamp":"2025-04-11T08:28:04.144Z"}
+{"level":"info","message":"Received print job","printData":{"address":"1213111111111","cnic":"1213111111111","customerName":"Aliss","customerPhone":"03409898998","discount":0,"downPayment":123,"employeeName":"New ","guarantors":[],"image":"https://res.cloudinary.com/djzigu0nr/image/upload/v1744360136/uploads/WhatsApp%20Image%202025-04-11%20at%2011.40.58%20AM.jpeg.jpg","khataNumber":"1834A","monthlyInstallment":234,"products":[{"color":"dragon black","discount":0,"name":"Samsung 245","price":20000,"quantity":1},{"color":"Blue","discount":0,"name":"Washing Machine","price":30000,"quantity":1}],"subkhataId":"67f8d2cb40f48914c1995e95","totalAmount":50000,"type":"installment"},"timestamp":"2025-04-11T08:29:01.824Z"}
+{"level":"info","message":"Using Windows spooler interface; skipping connectivity check.","timestamp":"2025-04-11T08:29:01.833Z"}
+{"level":"info","message":"127.0.0.1 - - [11/Apr/2025:08:29:01 +0000] \"POST /print HTTP/1.1\" 200 31 \"http://localhost:5173/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36\"","timestamp":"2025-04-11T08:29:01.839Z"}
+{"level":"info","message":"Receipt printed successfully","timestamp":"2025-04-11T08:29:03.684Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-11T08:29:03.687Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-11T08:29:03.692Z"}
+{"level":"info","message":"Received print job","printData":{"address":"House 11-Lane 1- North Bani gala","cnic":"1212121212121","customerName":"EHITIDHA,","customerPhone":"03498317774","discount":0,"downPayment":346,"employeeName":"Mulazim1234","guarantors":[],"image":"https://res.cloudinary.com/djzigu0nr/image/upload/v1744095094/uploads/bidding.PNG.png","khataNumber":"5495q","monthlyInstallment":5567,"products":[{"color":"Blue","discount":0,"name":"Washing Machine","price":30000,"quantity":1},{"color":"dragon black","discount":0,"name":"Samsung 245","price":20000,"quantity":1}],"subkhataId":"67f8d55840f48914c1996a8d","totalAmount":50000,"type":"installment"},"timestamp":"2025-04-11T08:39:53.862Z"}
+{"level":"info","message":"Using Windows spooler interface; skipping connectivity check.","timestamp":"2025-04-11T08:39:53.863Z"}
+{"level":"info","message":"127.0.0.1 - - [11/Apr/2025:08:39:53 +0000] \"POST /print HTTP/1.1\" 200 31 \"http://localhost:5173/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36\"","timestamp":"2025-04-11T08:39:53.868Z"}
+{"level":"info","message":"Receipt printed successfully","timestamp":"2025-04-11T08:39:54.264Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-11T08:39:54.267Z"}
+{"level":"info","message":"Persisted 0 jobs to disk.","timestamp":"2025-04-11T08:39:54.268Z"}

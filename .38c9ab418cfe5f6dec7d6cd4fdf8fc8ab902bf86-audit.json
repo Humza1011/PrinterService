@@ -14,6 +14,11 @@
             "date": 1744347836263,
             "name": "print-server-2025-04-11.log",
             "hash": "a50a71394122451b7bbc8b4c1e7c80be28c5c3269f82b6a41aea48a3e0339fbd"
+        },
+        {
+            "date": 1744435594854,
+            "name": "print-server-2025-04-12.log",
+            "hash": "0c165ac04e82e255c270fd934f6cc418edf1a1613df2ee41c3b67ee4300c6999"
         }
     ],
     "hashType": "sha256"
