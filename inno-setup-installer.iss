@@ -21,6 +21,7 @@ Source: "printerService.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "printQueue.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "icon.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "node_modules\*"; DestDir: "{app}\node_modules"; Flags: recursesubdirs ignoreversion
+Source: "fonts\*"; DestDir: "{app}\fonts"; Flags: recursesubdirs ignoreversion
 
 [Icons]
 Name: "{group}\MyPrinterService"; Filename: "{app}\node.exe"; Parameters: "index.js"
