@@ -1,10 +1,8 @@
-// index.js
 require("dotenv").config();
 var cors = require("cors");
 const express = require("express");
 const morgan = require("morgan");
 const winston = require("winston");
-require("winston-daily-rotate-file");
 
 const http = require("http");
 const {
@@ -21,11 +19,13 @@ app.use(cors());
 const PORT = process.env.PRINT_SERVER_PORT || 3001;
 
 // Configure Winston with Daily Rotate
-const transport = new winston.transports.DailyRotateFile({
-  filename: "print-server-%DATE%.log",
-  datePattern: "YYYY-MM-DD",
-  maxSize: "20m",
-  maxFiles: "14d",
+const errorFileTransport = new winston.transports.File({
+  filename: "errors.log",
+  level: "error", // Only log 'error' level messages
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json()
+  ),
 });
 
 const logger = winston.createLogger({
@@ -34,7 +34,7 @@ const logger = winston.createLogger({
     winston.format.timestamp(),
     winston.format.json()
   ),
-  transports: [new winston.transports.Console(), transport],
+  transports: [new winston.transports.Console(), errorFileTransport],
 });
 
 // Pipe Morgan logs into Winston.

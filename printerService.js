@@ -6,7 +6,7 @@ const printerModule = require("@thiagoelg/node-printer");
 const { createCanvas, registerFont } = require("canvas");
 
 // Register the Urdu font – ensure this file exists in your project folder.
-registerFont("./Jameel Noori Nastaleeq Kasheeda.ttf", {
+registerFont("./fonts/Jameel Noori Nastaleeq Kasheeda.ttf", {
   family: "JameelNooriNastaleeqKasheeda",
 });
 
@@ -129,7 +129,6 @@ function generateReceiptImage(data) {
   // Receipt title based on type.
   if (data.type === "basic") {
     headerSection.push({ text: "خریداری رسید", align: "center" });
-   
   } else if (data.type === "installment") {
     headerSection.push({ text: "قسط خریداری کی رسید", align: "center" });
   } else if (data.type === "detailed") {
@@ -145,7 +144,7 @@ function generateReceiptImage(data) {
 
   // --- Section 2: Customer and Employee Details (and installment extras) ---
   const customerSection = [];
-  if (data.type === "installment" ) {
+  if (data.type === "installment") {
     if (data.khataNumber) {
       customerSection.push({
         text: `سب کھاتہ نمبر: ${data.khataNumber}`,
@@ -154,36 +153,36 @@ function generateReceiptImage(data) {
       customerSection.push({ text: "", align: "right" });
     }
   }
-   if (data.type === "detailed") {
-     if (data.subKhataNumber) {
-       customerSection.push({
-         text: `سب کھاتہ نمبر: ${data.subKhataNumber}`,
-         align: "center",
-       });
-       customerSection.push({ text: "", align: "right" });
-     }
-   }
+  if (data.type === "detailed") {
+    if (data.subKhataNumber) {
+      customerSection.push({
+        text: `سب کھاتہ نمبر: ${data.subKhataNumber}`,
+        align: "center",
+      });
+      customerSection.push({ text: "", align: "right" });
+    }
+  }
   if (data.customerName) {
     customerSection.push({
       text: `گاہک: ${data.customerName}`,
       align: "right",
     });
   }
- 
-  if(data.type==="installment"){
-        if (data.cnic) {
-          customerSection.push({
-            text: `شناختی کارڈ: ${data.cnic}`,
-            align: "right",
-          });
-        }
+
+  if (data.type === "installment") {
+    if (data.cnic) {
+      customerSection.push({
+        text: `شناختی کارڈ: ${data.cnic}`,
+        align: "right",
+      });
+    }
   }
-   if (data.employeeName) {
-     customerSection.push({
-       text: `ملازم: ${data.employeeName}`,
-       align: "right",
-     });
-   }
+  if (data.employeeName) {
+    customerSection.push({
+      text: `ملازم: ${data.employeeName}`,
+      align: "right",
+    });
+  }
   if (customerSection.length) {
     sections.push(customerSection);
   }
@@ -192,7 +191,7 @@ function generateReceiptImage(data) {
   const bodySection = [];
   if (data.type === "basic" || data.type === "installment") {
     bodySection.push({ text: "خریداری کی اشیاء:", align: "right" });
-     bodySection.push({ text: "", align: "right" });
+    bodySection.push({ text: "", align: "right" });
     const products = data.products || data.items || [];
     products.forEach((product) => {
       let prodLine = `${product.name} (${product.quantity} x ${parseFloat(
@@ -277,7 +276,7 @@ function generateReceiptImage(data) {
     // Detailed receipt: Add payment history.
     if (data.totalPayments && data.totalPayments.length > 0) {
       bodySection.push({ text: "ادائیگی کی تاریخ:", align: "right" });
-       bodySection.push({ text: "", align: "right" });
+      bodySection.push({ text: "", align: "right" });
       data.totalPayments.forEach((payment, index) => {
         const date = new Date(payment.saleDate).toLocaleDateString("ur-PK");
         const paymentLine = `#${index + 1}: ${date} - ${parseFloat(

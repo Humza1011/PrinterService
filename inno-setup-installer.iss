@@ -15,10 +15,8 @@ Source: "node.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "index.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "package.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".env"; DestDir: "{app}"; Flags: ignoreversion
-Source: "config.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "service-install.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "service-uninstall.js"; DestDir: "{app}"; Flags: ignoreversion
-Source: "validator.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "printerService.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "printQueue.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "icon.ico"; DestDir: "{app}"; Flags: ignoreversion
