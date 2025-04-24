@@ -138,6 +138,10 @@ function generateReceiptImage(data) {
   }
   // Add extra space between the receipt title and phone numbers.
   headerSection.push({ text: "", align: "right" });
+  headerSection.push({
+    text: `${new Date().toLocaleString()} :تاریخ`,
+    align: "right",
+  });
   headerSection.push({ text: "چراغ دین: 03455420705", align: "right" });
   headerSection.push({ text: "علی جان: 03492633381", align: "right" });
   sections.push(headerSection);
