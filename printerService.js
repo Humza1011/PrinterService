@@ -139,7 +139,15 @@ function generateReceiptImage(data) {
   // Add extra space between the receipt title and phone numbers.
   headerSection.push({ text: "", align: "right" });
   headerSection.push({
-    text: `${new Date().toLocaleString()} :تاریخ`,
+    text: `${new Date().toLocaleString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    })} :تاریخ`,
     align: "right",
   });
   headerSection.push({ text: "چراغ دین: 03455420705", align: "right" });
