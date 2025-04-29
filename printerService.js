@@ -151,7 +151,7 @@ function generateReceiptImage(data) {
     align: "right",
   });
   headerSection.push({ text: "چراغ دین: 03455420705", align: "right" });
-  headerSection.push({ text: "علی جان: 03492633381", align: "right" });
+  headerSection.push({ text: "علی جان: 03155550762", align: "right" });
   sections.push(headerSection);
 
   // --- Section 2: Customer and Employee Details (and installment extras) ---
