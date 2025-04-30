@@ -138,6 +138,8 @@ function generateReceiptImage(data) {
   }
   // Add extra space between the receipt title and phone numbers.
   headerSection.push({ text: "", align: "right" });
+  headerSection.push({ text: "", align: "right" });
+  headerSection.push({ text: "", align: "right" });
   headerSection.push({
     text: `${new Date().toLocaleString("en-GB", {
       day: "2-digit",
@@ -148,7 +150,7 @@ function generateReceiptImage(data) {
       second: "2-digit",
       hour12: true,
     })} :تاریخ`,
-    align: "right",
+    align: "center",
   });
   headerSection.push({ text: "چراغ دین: 03455420705", align: "right" });
   headerSection.push({ text: "علی جان: 03155550762", align: "right" });
