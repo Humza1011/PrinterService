@@ -184,6 +184,13 @@ function generateReceiptImage(data) {
     });
   }
 
+  if (data.fatherName) {
+    customerSection.push({
+      text: `گاہک کے والد کا نام: ${data.fatherName}`,
+      align: "right",
+    });
+  }
+
   if (data.type === "installment") {
     if (data.cnic) {
       customerSection.push({
