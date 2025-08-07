@@ -211,7 +211,11 @@ function generateReceiptImage(data) {
 
   // --- Section 3: Body (Products and/or Payment details) ---
   const bodySection = [];
-  if (data.type === "basic" || data.type === "installment") {
+  if (
+    data.type === "basic" ||
+    data.type === "installment" ||
+    data.type === "detailed"
+  ) {
     bodySection.push({ text: "خریداری کی اشیاء:", align: "right" });
     bodySection.push({ text: "", align: "right" });
     const products = data.products || data.items || [];
@@ -222,7 +226,10 @@ function generateReceiptImage(data) {
       if (product.discount && parseFloat(product.discount) > 0) {
         prodLine += ` (رعایت: ${parseFloat(product.discount).toFixed(2)} Rs)`;
       }
-      if (data.type === "installment" && product.color) {
+      if (
+        (data?.type === "installment" || data?.type === "detailed") &&
+        product?.color
+      ) {
         prodLine += ` (رنگ: ${product.color})`;
       }
       bodySection.push({ text: prodLine, align: "right" });
