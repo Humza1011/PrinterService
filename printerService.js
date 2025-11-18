@@ -226,11 +226,15 @@ function generateReceiptImage(data) {
       if (product.discount && parseFloat(product.discount) > 0) {
         prodLine += ` (رعایت: ${parseFloat(product.discount).toFixed(2)} Rs)`;
       }
+
       if (
         (data?.type === "installment" || data?.type === "detailed") &&
         product?.color
       ) {
         prodLine += ` (رنگ: ${product.color})`;
+      }
+      if (product?.warrantyDetails) {
+        prodLine += ` (وارنٹی کی تفصیلات: ${product?.warrantyDetails}`;
       }
       bodySection.push({ text: prodLine, align: "right" });
       // Add space between every product.
