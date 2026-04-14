@@ -31,7 +31,7 @@ async function initPrinter(logger) {
   const printer = createPrinterInstance();
   if (PRINTER_INTERFACE.startsWith("printer:")) {
     logger.info(
-      "Using Windows spooler interface; skipping connectivity check."
+      "Using Windows spooler interface; skipping connectivity check.",
     );
     return;
   }
@@ -221,7 +221,7 @@ function generateReceiptImage(data) {
     const products = data.products || data.items || [];
     products.forEach((product) => {
       let prodLine = `${product.name} (${product.quantity} x ${parseFloat(
-        product.price
+        product.price,
       ).toFixed(2)} Rs)`;
       if (product.discount && parseFloat(product.discount) > 0) {
         prodLine += ` (رعایت: ${parseFloat(product.discount).toFixed(2)} Rs)`;
@@ -287,7 +287,7 @@ function generateReceiptImage(data) {
       if (data.monthlyInstallment !== undefined) {
         bodySection.push({
           text: `ماہانہ قسط: ${parseFloat(data.monthlyInstallment).toFixed(
-            2
+            2,
           )} Rs`,
           align: "right",
         });
@@ -313,7 +313,7 @@ function generateReceiptImage(data) {
       data.totalPayments.forEach((payment, index) => {
         const date = new Date(payment.saleDate).toLocaleDateString("ur-PK");
         const paymentLine = `#${index + 1}: ${date} - ${parseFloat(
-          payment.paidAmount
+          payment.paidAmount,
         ).toFixed(2)} Rs`;
         bodySection.push({ text: paymentLine, align: "right" });
       });
@@ -342,6 +342,14 @@ function generateReceiptImage(data) {
       if (data.remainingAmount !== undefined) {
         bodySection.push({
           text: `باقی رقم: ${parseFloat(data.remainingAmount).toFixed(2)} Rs`,
+          align: "right",
+        });
+      }
+      if (data.monthlyInstallment !== undefined) {
+        bodySection.push({
+          text: `ماہانہ قسط: ${parseFloat(data.monthlyInstallment).toFixed(
+            2,
+          )} Rs`,
           align: "right",
         });
       }
@@ -380,7 +388,7 @@ function generateReceiptImage(data) {
       finalLines.push({ text: "", align: lineObj.align });
     } else {
       wrapped.forEach((wrappedLine) =>
-        finalLines.push({ text: wrappedLine, align: lineObj.align })
+        finalLines.push({ text: wrappedLine, align: lineObj.align }),
       );
     }
   });
