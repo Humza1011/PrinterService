@@ -1,7 +1,7 @@
 {
   "name": "my-printer-service",
   "version": "1.0.0",
-  "description": "Local Print Server for your Cloud POS",
+  "description": "Local Print Server for Web POS",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
