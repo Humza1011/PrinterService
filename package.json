@@ -6,11 +6,15 @@
   "scripts": {
     "start": "node index.js",
     "install-service": "node service-install.js",
-    "uninstall-service": "node service-uninstall.js"
+    "uninstall-service": "node service-uninstall.js",
+    "build-installer": "powershell -ExecutionPolicy Bypass -File ./build-installer.ps1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "18.20.8"
+  },
   "dependencies": {
     "@thiagoelg/node-printer": "^0.6.2",
     "canvas": "^3.1.0",

@@ -6,7 +6,7 @@ const printerModule = require("@thiagoelg/node-printer");
 const { createCanvas, registerFont } = require("canvas");
 
 // Register the Urdu font – ensure this file exists in your project folder.
-registerFont("./fonts/Jameel Noori Nastaleeq Kasheeda.ttf", {
+registerFont(path.join(__dirname, "fonts", "Jameel Noori Nastaleeq Kasheeda.ttf"), {
   family: "JameelNooriNastaleeqKasheeda",
 });
 
@@ -88,7 +88,7 @@ function addSeparator(linesArr, availableWidth, fontSize) {
   // Here we assume a dash is roughly fontSize * 0.6 in width.
   const dashChar = "-";
   const dashWidth = fontSize * 0.6;
-  const dashCount = Math.floor(10000 / (fontSize / 2));
+  const dashCount = Math.max(1, Math.floor(availableWidth / dashWidth));
   const dashLine = dashChar.repeat(dashCount);
   linesArr.push({ text: "", align: "right" });
   // We set alignment to "left" so the dash line begins at the left margin.
@@ -213,8 +213,7 @@ function generateReceiptImage(data) {
   const bodySection = [];
   if (
     data.type === "basic" ||
-    data.type === "installment" ||
-    data.type === "detailed"
+    data.type === "installment"
   ) {
     bodySection.push({ text: "خریداری کی اشیاء:", align: "right" });
     bodySection.push({ text: "", align: "right" });
@@ -235,6 +234,7 @@ function generateReceiptImage(data) {
       }
       if (product?.warrantyDetails) {
         prodLine += ` (وارنٹی کی تفصیلات: ${product?.warrantyDetails}`;
+        prodLine += ")";
       }
       bodySection.push({ text: prodLine, align: "right" });
       // Add space between every product.
@@ -437,9 +437,16 @@ async function printReceipt(printData, logger) {
 
     if (process.env.PRINT_MODE === "image") {
       const imageBuffer = generateReceiptImage(printData);
-      const tempImagePath = path.join(__dirname, "temp_receipt.png");
+      const tempImagePath = path.join(
+        __dirname,
+        `temp_receipt_${Date.now()}_${Math.random().toString(16).slice(2)}.png`,
+      );
       fs.writeFileSync(tempImagePath, imageBuffer);
-      await printer.printImage(tempImagePath);
+      try {
+        await printer.printImage(tempImagePath);
+      } finally {
+        await fs.promises.unlink(tempImagePath).catch(() => {});
+      }
     } else {
       // Fallback text printing (if needed)
       printer.alignCenter();
@@ -501,7 +508,9 @@ async function pollPrinterStatus(logger) {
 
 function startPrinterPolling(logger, intervalMs) {
   setInterval(() => {
-    pollPrinterStatus(logger);
+    pollPrinterStatus(logger).catch((err) => {
+      logger.error("Printer polling failed", { error: err.message });
+    });
   }, intervalMs);
 }
 

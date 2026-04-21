@@ -8,11 +8,12 @@ const http = require("http");
 const {
   enqueuePrintJob,
   processPrintQueue,
+  initializeQueue,
   persistQueueToDisk,
   getQueueLength,
 } = require("./printQueue");
 // const { validatePrintData } = require("./validator");
-const { startPrinterPolling } = require("./printerService");
+const { startPrinterPolling, createPrinterInstance } = require("./printerService");
 
 const app = express();
 app.use(cors());
@@ -41,14 +42,11 @@ const logger = winston.createLogger({
 app.use(
   morgan("combined", { stream: { write: (msg) => logger.info(msg.trim()) } })
 );
-app.use(express.json());
+app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 // Extended health-check endpoint.
 app.get("/healthz", async (req, res) => {
-  const remoteAddr = req.socket.remoteAddress;
-  const isLocal =
-    remoteAddr && (remoteAddr.startsWith("127.") || remoteAddr === "::1");
   let printerStatus = "unknown";
   try {
     if (
@@ -57,10 +55,7 @@ app.get("/healthz", async (req, res) => {
     ) {
       printerStatus = "spooler";
     } else {
-      const printerService = require("./printerService");
-      printerStatus = (await printerService
-        .createPrinterInstance()
-        .isPrinterConnected())
+      printerStatus = (await createPrinterInstance().isPrinterConnected())
         ? "connected"
         : "disconnected";
     }
@@ -74,19 +69,12 @@ app.get("/healthz", async (req, res) => {
   });
 });
 
-// Security middleware: Allow only local requests.
-// app.use((req, res, next) => {
-//   const remoteAddr = req.socket.remoteAddress;
-//   if (remoteAddr && (remoteAddr.startsWith("127.") || remoteAddr === "::1")) {
-//     next();
-//   } else {
-//     res.status(403).json({ error: "Forbidden" });
-//   }
-// });
-
 // Endpoint to receive print jobs.
 app.post("/print", (req, res) => {
   const printData = req.body;
+  if (!printData || typeof printData !== "object" || Array.isArray(printData)) {
+    return res.status(400).json({ error: "Invalid print payload" });
+  }
   logger.info("Received print job", { printData });
   // try {
   //   validatePrintData(printData);
@@ -111,8 +99,19 @@ app.use((err, req, res, next) => {
 });
 
 const server = http.createServer(app);
-server.listen(PORT, "127.0.0.1", () => {
-  logger.info(`Local Print Server running on http://127.0.0.1:${PORT}`);
+
+async function startServer() {
+  await initializeQueue(logger);
+  server.listen(PORT, "127.0.0.1", () => {
+    logger.info(`Local Print Server running on http://127.0.0.1:${PORT}`);
+  });
+  // Start printer polling (logs on status change).
+  startPrinterPolling(logger, 30000);
+}
+
+startServer().catch((err) => {
+  logger.error("Failed to start print service", { error: err.message });
+  process.exit(1);
 });
 
 // Graceful shutdown.
@@ -134,6 +133,3 @@ async function shutdown() {
 
 process.on("SIGTERM", shutdown);
 process.on("SIGINT", shutdown);
-
-// Start printer polling (logs on status change).
-startPrinterPolling(logger, 30000);

@@ -15,6 +15,7 @@ Source: "node.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "index.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "package.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".env"; DestDir: "{app}"; Flags: ignoreversion
+Source: "queue.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "service-install.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "service-uninstall.js"; DestDir: "{app}"; Flags: ignoreversion
 Source: "printerService.js"; DestDir: "{app}"; Flags: ignoreversion
@@ -27,4 +28,7 @@ Source: "fonts\*"; DestDir: "{app}\fonts"; Flags: recursesubdirs ignoreversion
 Name: "{group}\MyPrinterService"; Filename: "{app}\node.exe"; Parameters: "index.js"
 
 [Run]
-Filename: "{app}\node.exe"; Parameters: "service-install.js"; WorkingDir: "{app}"; Flags: runhidden
+Filename: "{app}\node.exe"; Parameters: "service-install.js"; WorkingDir: "{app}"; Flags: runhidden waituntilterminated
+
+[UninstallRun]
+Filename: "{app}\node.exe"; Parameters: "service-uninstall.js"; WorkingDir: "{app}"; Flags: runhidden waituntilterminated
