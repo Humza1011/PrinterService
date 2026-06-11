@@ -6,9 +6,12 @@ const printerModule = require("@thiagoelg/node-printer");
 const { createCanvas, registerFont } = require("canvas");
 
 // Register the Urdu font – ensure this file exists in your project folder.
-registerFont(path.join(__dirname, "fonts", "Jameel Noori Nastaleeq Kasheeda.ttf"), {
-  family: "JameelNooriNastaleeqKasheeda",
-});
+registerFont(
+  path.join(__dirname, "fonts", "Jameel Noori Nastaleeq Kasheeda.ttf"),
+  {
+    family: "JameelNooriNastaleeqKasheeda",
+  },
+);
 
 const PRINTER_INTERFACE =
   process.env.PRINTER_INTERFACE || "printer:Black Copper 80";
@@ -213,7 +216,8 @@ function generateReceiptImage(data) {
   const bodySection = [];
   if (
     data.type === "basic" ||
-    data.type === "installment"
+    data.type === "installment" ||
+    data.type === "detailed"
   ) {
     bodySection.push({ text: "خریداری کی اشیاء:", align: "right" });
     bodySection.push({ text: "", align: "right" });
