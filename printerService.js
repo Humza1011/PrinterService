@@ -309,7 +309,8 @@ function generateReceiptImage(data) {
         });
       }
     }
-  } else if (data.type === "detailed") {
+  }
+  if (data.type === "detailed") {
     // Detailed receipt: Add payment history.
     if (data.totalPayments && data.totalPayments.length > 0) {
       bodySection.push({ text: "ادائیگی کی تاریخ:", align: "right" });
