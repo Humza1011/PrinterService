@@ -94,8 +94,7 @@ function addSeparator(linesArr, availableWidth, fontSize) {
   const dashCount = Math.max(1, Math.floor(availableWidth / dashWidth));
   const dashLine = dashChar.repeat(dashCount);
   linesArr.push({ text: "", align: "right" });
-  // We set alignment to "left" so the dash line begins at the left margin.
-  linesArr.push({ text: dashLine, align: "left" });
+  linesArr.push({ text: dashLine, align: "center" });
   linesArr.push({ text: "", align: "right" });
 }
 
